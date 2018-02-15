@@ -16,7 +16,7 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('2')
   });
 
-  it('should update the display of the running total', function(){
+  it('should have working subtract button', function(){
      running_total = element(by.css('#running_total'))
      element(by.css('#number6')).click();
      element(by.css('#operator_subtract')).click();
@@ -25,5 +25,14 @@ describe('calculator functionality', function() {
      expect(running_total.getAttribute('value')).to.eventually.equal('2');
    });
 
-   
+   it('should have working add button', function(){
+      running_total = element(by.css('#running_total'))
+      element(by.css('#number6')).click();
+      element(by.css('#operator_add')).click();
+      element(by.css('#number4')).click();
+      element(by.css('#operator_equals')).click();
+      expect(running_total.getAttribute('value')).to.eventually.equal('10');
+    });
+
+
 });
